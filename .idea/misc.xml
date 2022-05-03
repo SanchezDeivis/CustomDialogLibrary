@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="CustomDialogDesign/src/main/res/layout/custom_dialog_progress.xml" value="0.2625" />
         <entry key="CustomDialogDesign/src/main/res/layout/dialog_choice.xml" value="0.2625" />
         <entry key="CustomDialogDesign/src/main/res/layout/dialog_custom.xml" value="0.2625" />
         <entry key="CustomDialogDesign/src/main/res/layout/dialog_info.xml" value="0.2625" />
@@ -11,6 +12,7 @@
         <entry key="CustomDialogDesign/src/main/res/layout/dialog_standard_vertical.xml" value="0.2625" />
         <entry key="CustomDialogDesign/src/main/res/layout/dialog_text_input.xml" value="0.2625" />
         <entry key="CustomDialogDesign/src/main/res/layout/item_footer_confirm.xml" value="0.2625" />
+        <entry key="CustomDialogDesign/src/main/res/layout/item_footer_confirm_custom.xml" value="0.2625" />
         <entry key="CustomDialogDesign/src/main/res/layout/item_simple_text.xml" value="0.2625" />
         <entry key="CustomDialogDesign/src/main/res/layout/item_simple_text_multichoice.xml" value="0.2625" />
         <entry key="CustomDialogDesign/src/main/res/layout/layout.xml" value="0.24739583333333334" />

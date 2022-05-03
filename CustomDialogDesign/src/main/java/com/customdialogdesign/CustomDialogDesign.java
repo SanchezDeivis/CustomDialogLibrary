@@ -12,7 +12,7 @@ import androidx.annotation.NonNull;
 /**
  * Created by Sánchez Deivis on 27,abril,2022
  */
-public class CustomDialogDesign extends CustomDialog<CustomDialogDesign> {
+public class CustomDialogDesign extends CustomDialogDs<CustomDialogDesign> {
 
     private View addedView;
     private InstanceStateManager instanceStateManager;
@@ -40,7 +40,7 @@ public class CustomDialogDesign extends CustomDialog<CustomDialogDesign> {
     }
 
     @Override
-    public CustomDialogDesign configureView(@NonNull ViewConfigurator<View> configurator) {
+    public CustomDialogDesign configureView(@NonNull ViewConfiguratorCd<View> configurator) {
         if (addedView == null) {
             throw new IllegalStateException(string(R.string.ex_msg_dialog_view_not_set));
         }
@@ -80,7 +80,7 @@ public class CustomDialogDesign extends CustomDialog<CustomDialogDesign> {
 
     @Override
     protected int getLayout() {
-        return R.layout.dialog_custom;
+        return R.layout.custom_dialog_custom;
     }
 
 

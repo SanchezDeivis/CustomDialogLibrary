@@ -22,7 +22,7 @@ import androidx.core.content.ContextCompat;
 /**
  * Created by Sánchez Deivis on 27,abril,2022
  */
-public abstract class CustomDialog<T extends CustomDialog> {
+public abstract class CustomDialogDs<T extends CustomDialogDs> {
 
     private static final String KEY_SAVED_STATE_TOKEN = "key_saved_state_token";
 
@@ -36,15 +36,15 @@ public abstract class CustomDialog<T extends CustomDialog> {
     private TextView messageMoreView;
     private TextView tvOverflowView;
 
-    public CustomDialog(Context context) {
+    public CustomDialogDs(Context context) {
         this(context, 0);
     }
 
-    public CustomDialog(Context context, int theme) {
+    public CustomDialogDs(Context context, int theme) {
         this(context, theme, 0);
     }
 
-    public CustomDialog(Context context, int theme, int layoutRes) {
+    public CustomDialogDs(Context context, int theme, int layoutRes) {
         if (layoutRes == 0) {
             layoutRes = getLayout();
         }
@@ -70,18 +70,18 @@ public abstract class CustomDialog<T extends CustomDialog> {
     @LayoutRes
     protected abstract int getLayout();
 
-    public T configureView(@NonNull ViewConfigurator<View> viewViewConfigurator) {
-        viewViewConfigurator.configureView(dialogView);
+    public T configureView(@NonNull ViewConfiguratorCd<View> viewViewConfiguratorCd) {
+        viewViewConfiguratorCd.configureView(dialogView);
         return (T) this;
     }
 
-    public T configureTitleView(@NonNull ViewConfigurator<TextView> viewConfigurator) {
-        viewConfigurator.configureView(titleView);
+    public T configureTitleView(@NonNull ViewConfiguratorCd<TextView> viewConfiguratorCd) {
+        viewConfiguratorCd.configureView(titleView);
         return (T) this;
     }
 
-    public T configureMessageView(@NonNull ViewConfigurator<TextView> viewConfigurator) {
-        viewConfigurator.configureView(messageView);
+    public T configureMessageView(@NonNull ViewConfiguratorCd<TextView> viewConfiguratorCd) {
+        viewConfiguratorCd.configureView(messageView);
         return (T) this;
     }
 

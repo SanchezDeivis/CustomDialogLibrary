@@ -13,7 +13,7 @@ import androidx.annotation.StringRes;
 /**
  * Created by Sánchez Deivis on 27,abril,2022
  */
-public class CustomInfoDialog extends CustomDialog<CustomInfoDialog> {
+public class CustomInfoDialogDs extends CustomDialogDs<CustomInfoDialogDs> {
     private static final String STORAGE = "cd_dont_show";
 
     private static final String KEY_DONT_SHOW_AGAIN = "key_dont_show_again";
@@ -23,11 +23,11 @@ public class CustomInfoDialog extends CustomDialog<CustomInfoDialog> {
 
     private int infoDialogId;
 
-    public CustomInfoDialog(Context context) {
+    public CustomInfoDialogDs(Context context) {
         super(context);
     }
 
-    public CustomInfoDialog(Context context, int theme) {
+    public CustomInfoDialogDs(Context context, int theme) {
         super(context, theme);
     }
 
@@ -38,7 +38,7 @@ public class CustomInfoDialog extends CustomDialog<CustomInfoDialog> {
         infoDialogId = -1;
     }
 
-    public CustomInfoDialog setNotShowAgainOptionEnabled(int dialogId) {
+    public CustomInfoDialogDs setNotShowAgainOptionEnabled(int dialogId) {
         infoDialogId = dialogId;
         cbDontShowAgain.setVisibility(View.VISIBLE);
         confirmButton.setOnClickListener(new View.OnClickListener() {
@@ -52,21 +52,21 @@ public class CustomInfoDialog extends CustomDialog<CustomInfoDialog> {
         return this;
     }
 
-    public CustomInfoDialog setNotShowAgainOptionChecked(boolean defaultChecked) {
+    public CustomInfoDialogDs setNotShowAgainOptionChecked(boolean defaultChecked) {
         cbDontShowAgain.setChecked(defaultChecked);
         return this;
     }
 
-    public CustomInfoDialog setConfirmButtonText(@StringRes int text) {
+    public CustomInfoDialogDs setConfirmButtonText(@StringRes int text) {
         return setConfirmButtonText(string(text));
     }
 
-    public CustomInfoDialog setConfirmButtonText(String text) {
+    public CustomInfoDialogDs setConfirmButtonText(String text) {
         confirmButton.setText(text);
         return this;
     }
 
-    public CustomInfoDialog setConfirmButtonColor(int color) {
+    public CustomInfoDialogDs setConfirmButtonColor(int color) {
         confirmButton.setTextColor(color);
         return this;
     }
@@ -99,7 +99,7 @@ public class CustomInfoDialog extends CustomDialog<CustomInfoDialog> {
 
     @Override
     protected int getLayout() {
-        return R.layout.dialog_info;
+        return R.layout.custom_dialog_info;
     }
 
     public static void reset(Context context, int dialogId) {

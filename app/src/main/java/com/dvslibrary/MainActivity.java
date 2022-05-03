@@ -8,7 +8,7 @@ import androidx.annotation.ColorInt;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.customdialogdesign.CustomStandardDialog;
+import com.customdialogdesign.CustomStandardDialogDs;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        CustomStandardDialog dialog = createStandardDialog(this,
+        CustomStandardDialogDs dialog = createStandardDialog(this,
                 "Hola este es mi primer dialog",
                 MainActivity.this.getResources().getString(R.string.messaguelarge),
                 "...Ver Mas",
@@ -51,11 +51,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public static CustomStandardDialog createStandardDialog(Context context, String title,
-                                                            String message, String textButton, @ColorInt int textColor) {
+    public static CustomStandardDialogDs createStandardDialog(Context context, String title,
+                                                              String message, String textButton, @ColorInt int textColor) {
 
 
-        return new CustomStandardDialog(context)
+        return new CustomStandardDialogDs(context)
                 .setTopColorRes(R.color.purple_200)
                 .setIcon(R.drawable.ic_launcher_foreground)
                 .configureTitleView(tit -> tit.setTextSize(14))

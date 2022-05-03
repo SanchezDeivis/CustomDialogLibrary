@@ -12,7 +12,7 @@ public class CustomSaveStateHandler {
 
     private static final String KEY_DIALOG_ID = "id";
 
-    private SparseArray<WeakReference<CustomDialog<?>>> handledDialogs;
+    private SparseArray<WeakReference<CustomDialogDs<?>>> handledDialogs;
 
     public CustomSaveStateHandler() {
         handledDialogs = new SparseArray<>();
@@ -20,12 +20,12 @@ public class CustomSaveStateHandler {
 
     public void saveInstanceState(Bundle outState) {
         for (int index = handledDialogs.size() - 1; index >= 0; index--) {
-            WeakReference<CustomDialog<?>> dialogRef = handledDialogs.valueAt(index);
+            WeakReference<CustomDialogDs<?>> dialogRef = handledDialogs.valueAt(index);
             if (dialogRef.get() == null) {
                 handledDialogs.remove(index);
                 continue;
             }
-            CustomDialog<?> dialog = dialogRef.get();
+            CustomDialogDs<?> dialog = dialogRef.get();
             if (dialog.isShowing()) {
                 dialog.onSaveInstanceState(outState);
                 outState.putInt(KEY_DIALOG_ID, handledDialogs.keyAt(index));
@@ -34,8 +34,8 @@ public class CustomSaveStateHandler {
         }
     }
 
-    void handleDialogStateSave(int id, CustomDialog<?> dialog) {
-        handledDialogs.put(id, new WeakReference<CustomDialog<?>>(dialog));
+    void handleDialogStateSave(int id, CustomDialogDs<?> dialog) {
+        handledDialogs.put(id, new WeakReference<CustomDialogDs<?>>(dialog));
     }
 
     public static boolean wasDialogOnScreen(Bundle savedInstanceState) {
