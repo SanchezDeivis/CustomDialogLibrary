@@ -85,6 +85,17 @@ public abstract class CustomDialogDs<T extends CustomDialogDs> {
         return (T) this;
     }
 
+    public T setMessageShort(@StringRes int message) {
+        return setMessageShort(string(message));
+    }
+
+    public T setMessageShort(CharSequence message) {
+        messageView.setVisibility(View.VISIBLE);
+        messageView.setText(message);
+        return (T) this;
+    }
+
+
     public T setMessage(@StringRes int message,@StringRes int textButton,@ColorRes int textColor) {
         return setMessage(string(message),string(textButton),color(textColor));
     }
@@ -93,7 +104,11 @@ public abstract class CustomDialogDs<T extends CustomDialogDs> {
 
         String str_message= (String) message;
         boolean isLargeText = str_message.contains(".\n\n");
-        String substring =str_message.substring(0,str_message.indexOf("\n\n"));
+        String substring = "";
+
+        if (isLargeText) {
+            substring = str_message.substring(0, str_message.indexOf("\n\n"));
+        }
 
         messageView.setText(message);
         messageMoreView.setText(message);

@@ -109,5 +109,6 @@ public class CustomInfoDialogDs extends CustomDialogDs<CustomInfoDialogDs> {
     private static SharedPreferences storage(Context context) {
         return context.getSharedPreferences(STORAGE, Context.MODE_PRIVATE);
     }
+
 }
 

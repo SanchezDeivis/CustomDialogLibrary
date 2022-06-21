@@ -13,7 +13,7 @@
     <include layout="@layout/view_title_and_message_cd" />
 
     <ListView
-        android:id="@+id/ld_choices"
+        android:id="@+id/cd_choices"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:divider="@null"
